@@ -3,3 +3,5 @@ End-to-end analysis of Booking.com hotel reviews: cleaned and structured large r
 
 data link is :
 https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe 
+video link describing the project is: 
+[Video Link](https://drive.google.com/file/d/1mC8f91ti4gSvL0WT7zFRHezk8VCPpLc2/view?usp=sharing)
