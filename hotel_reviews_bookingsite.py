@@ -271,7 +271,10 @@ if st.session_state.show_dashboard:
             st.write("📌 Reviewer Nationalities Treemap")
 
             #  تحضير DataFrame
-            df=pd.read_csv('hotel_review_final.csv')
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
             df1 = df['reviewer_nationality'].value_counts(ascending=False).reset_index()
             df1.columns = ['reviewer_nationality', 'count']
 
@@ -305,7 +308,10 @@ if st.session_state.show_dashboard:
         with tab2:
             st.write("📌 top 10 nationalites")
 
-            df=pd.read_csv('hotel_review_final.csv')
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
 
             df2 = df['reviewer_nationality'].value_counts().head(10).reset_index()
             df2.columns = ['reviewer_nationality', 'count']
@@ -353,7 +359,12 @@ if st.session_state.show_dashboard:
         with tab3:
             st.write("📌least 10 nationalities")
 
-            df=pd.read_csv('hotel_review_final.csv')
+            
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
+
             df3=df['reviewer_nationality'].value_counts(ascending=True).head(10).T.to_frame().reset_index()
             df3.columns = ['reviewer_nationality' , 'count' ]
 
@@ -393,8 +404,13 @@ if st.session_state.show_dashboard:
             st.write("📌total reviews distribution")
 
 
-            df = pd.read_csv('hotel_review_final.csv', encoding='utf-8')  # أو 'latin1' لو فيه مشاكل في الترميز
+            
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
 
+            
             # Scatter plot
             fig20 = px.scatter(
                 df,
@@ -413,7 +429,12 @@ if st.session_state.show_dashboard:
 
             st.write("📌top written Reviews")
 
-            df = pd.read_csv('hotel_review_final.csv', encoding='utf-8')
+            
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
+
 
             df17 = df[['hotel_name', 'total_number_of_reviews', 'additional_number_of_scoring', 'reviewer_nationality']].copy()
             df17['written_reviews'] = df17['total_number_of_reviews'] - df17['additional_number_of_scoring']
@@ -430,7 +451,6 @@ if st.session_state.show_dashboard:
             )
 
             # رسم Bar Chart باستخدام Plotly Express
-            import plotly.express as px
 
             fig5 = px.bar(
                 x=nat_count.index,
@@ -452,6 +472,14 @@ if st.session_state.show_dashboard:
             st.plotly_chart(fig5, use_container_width=True)
         with tab6:
             st.write("📌Treemap of Average Reviewer Score by Nationality")
+
+
+            
+            file_id = "1ettEecLvalYALHp12Q-1feda8apTpeeg"
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, "hotel_review_final.csv", quiet=False)
+            df = pd.read_csv("hotel_review_final.csv")
+
 
 
             # حساب متوسط تقييم المراجعين لكل جنسية
@@ -1061,6 +1089,7 @@ if st.session_state.show_dashboard:
 
             # عرض الخريطة
             st.plotly_chart(fig50, use_container_width=True)
+
 
 
 
